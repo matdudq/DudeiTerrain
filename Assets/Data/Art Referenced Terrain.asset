@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f673c7e9f4a4b8b85c7af1cf29769ae, type: 3}
+  m_Name: Art Referenced Terrain
+  m_EditorClassIdentifier: 
+  terrainLayers:
+  - height: 0
+    terrainColor: {r: 0.7607844, g: 0.64705884, b: 0.47450984, a: 1}
+  - height: 0.3
+    terrainColor: {r: 0.7607844, g: 0.64705884, b: 0.47450984, a: 1}
+  - height: 0.33
+    terrainColor: {r: 0.8773585, g: 0.59194285, b: 0.44281775, a: 1}
+  - height: 0.45
+    terrainColor: {r: 0.8862746, g: 0.8862746, b: 0.6666667, a: 1}
+  - height: 0.6
+    terrainColor: {r: 0.39607847, g: 0.6431373, b: 0.37254903, a: 1}
+  - height: 0.65
+    terrainColor: {r: 0.39607847, g: 0.6431373, b: 0.37254903, a: 1}
+  noiseSettings:
+    noiseType: 2
+    positionOffset: {x: 0, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 4, y: 4, z: 4}
+    tillingPeriod: 44
+    tillingEnabled: 0
+    dimensions: 2
+    octaves: 8
+    lacunarity: 3.2
+    persistence: 0.2
+    woodPatternMultiplier: 1
+    turbulenceEnabled: 0
+    falloffEnabled: 0
+    falloffShift: 5.29
+    falloffDensity: 2.13
+  levelOfDetails: 0
+  heightRange: 30.49
+  heightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.6153174
+      outSlope: 0.6153174
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.75999165
+      value: 0.46763608
+      inSlope: 2.284049
+      outSlope: 2.284049
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8425225
+      value: 0.79386246
+      inSlope: 2.6308887
+      outSlope: 2.6308887
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.3089968
+      outSlope: 1.3089968
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  terrainOffset: {x: 0, y: 0, z: 0}
