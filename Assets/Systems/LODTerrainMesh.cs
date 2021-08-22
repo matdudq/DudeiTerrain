@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Procedural
+namespace DudeiTerrain
 {
     public partial class EndlessTerrain
     {

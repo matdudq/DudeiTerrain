@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections;
-using Procedural.Utilities;
+using DudeiTerrain.Utilities;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace Procedural
+namespace DudeiTerrain
 {
     public partial class TerrainMeshJobManager
     {

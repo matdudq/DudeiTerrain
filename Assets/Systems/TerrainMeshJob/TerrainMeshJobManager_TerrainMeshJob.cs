@@ -4,7 +4,7 @@ using Unity.Jobs;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace Procedural
+namespace DudeiTerrain
 {
     public partial class TerrainMeshJobManager
     {

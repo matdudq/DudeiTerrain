@@ -4,7 +4,7 @@ using Unity.Collections;
 using UnityEngine;
 using Utilities;
 
-namespace Procedural
+namespace DudeiTerrain
 {
     public partial class TerrainGenerator : SingletonMonoBehaviour<TerrainGenerator>
     {

@@ -6,7 +6,7 @@ using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
 
-namespace Procedural
+namespace DudeiTerrain
 {
     public partial class TerrainTextureJobManager
     {

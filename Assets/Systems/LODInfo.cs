@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Procedural
+namespace DudeiTerrain
 {
     [Serializable]
     public struct LODInfo

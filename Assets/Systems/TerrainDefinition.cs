@@ -1,7 +1,7 @@
 ﻿using DudeiNoise;
 using UnityEngine;
 
-namespace Procedural
+namespace DudeiTerrain
 {
     [CreateAssetMenu(fileName = nameof(TerrainDefinition), menuName = "Procedural/" + nameof(TerrainDefinition), order = 1)]
     public class TerrainDefinition : ScriptableObject

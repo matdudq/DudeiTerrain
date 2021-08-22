@@ -1,7 +1,7 @@
 ﻿using Unity.Collections;
 using UnityEngine;
 
-namespace Procedural.Utilities
+namespace DudeiTerrain.Utilities
 {
     public static class AnimationCurveUtility
     {

@@ -1,7 +1,7 @@
 ﻿using Unity.Collections;
 using UnityEngine;
 
-namespace Procedural
+namespace DudeiTerrain
 {
     public struct TerrainMeshJobSettings
     {
