@@ -79,11 +79,10 @@ namespace DudeiTerrain
 				int x = vertexIndex % simplifiedMeshResolution;
 				int y = (int) math.floor(vertexIndex / (float) simplifiedMeshResolution);
 
-				float xRatio = x / (float) simplifiedMeshResolution;
-				float yRatio = y / (float) simplifiedMeshResolution;
-				
-				float topLeftCornerX = (fullMeshResolution - 1) / -2f;
-				float topLeftCornerZ = (fullMeshResolution - 1) / 2f;
+				float xRatio = math.clamp(x / (float) (simplifiedMeshResolution-1), 0, 1);
+				float yRatio =  math.clamp(y / (float) (simplifiedMeshResolution-1), 0, 1);
+				float topLeftCornerX = (fullMeshResolution) / -2f;
+				float topLeftCornerZ = (fullMeshResolution) / 2f;
 
 				float heightRatio = noiseMap[x + simplifiedMeshResolution * y].r;
 				float curvedHeightRatio = heightCurve[(int) (heightRatio * CURVE_SAMPLING_FREQUENCY)];

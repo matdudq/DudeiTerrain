@@ -35,7 +35,7 @@ namespace DudeiTerrain
         {
             get
             {
-                return TerrainDefinition.MAP_CHUNK_SIZE - 1;
+                return TerrainDefinition.MAP_CHUNK_SIZE;
             }
         }
 
