@@ -28,7 +28,7 @@ namespace DudeiTerrain
         
         [SerializeField]
         private Vector3 terrainOffset = Vector3.zero;
-
+        
         #endregion Variables
 
 		#region Properties
@@ -64,8 +64,7 @@ namespace DudeiTerrain
 				return terrainOffset;
 			}
 		}
-
-		//TODO: HOW TO USE HEIGHT CURVE INSIDE JOB?
+		
 		public AnimationCurve HeightCurve
 		{
 			get
@@ -81,7 +80,7 @@ namespace DudeiTerrain
 				return levelOfDetails;
 			}
 		}
-
+		
 		#endregion Properties
     }
 }

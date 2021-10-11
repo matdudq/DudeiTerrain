@@ -6,6 +6,10 @@ using Unity.Jobs;
 using Unity.Mathematics;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using Unity.EditorCoroutines.Editor;
+#endif
+
 namespace DudeiTerrain
 {
     public partial class TerrainMeshJobManager
@@ -61,8 +65,18 @@ namespace DudeiTerrain
 
             JobHandle generateMeshJobHandle = terrainMeshJob.Schedule(jobIterations, meshSize / 6, dependency);
 
+#if UNITY_EDITOR
+            if (Application.isPlaying)
+            {
+                jobContext.StartCoroutine(GenerateMeshJobProcess());
+            }
+            else
+            {
+                EditorCoroutineUtility.StartCoroutine(GenerateMeshJobProcess(), this);
+            }
+#else         
             jobContext.StartCoroutine(GenerateMeshJobProcess());
-            
+#endif
             return generateMeshJobHandle;
             
             IEnumerator GenerateMeshJobProcess()

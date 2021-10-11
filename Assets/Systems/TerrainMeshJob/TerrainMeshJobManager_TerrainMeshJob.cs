@@ -79,8 +79,9 @@ namespace DudeiTerrain
 				int x = vertexIndex % simplifiedMeshResolution;
 				int y = (int) math.floor(vertexIndex / (float) simplifiedMeshResolution);
 
-				float xRatio = math.clamp(x / (float) (simplifiedMeshResolution-1), 0, 1);
-				float yRatio =  math.clamp(y / (float) (simplifiedMeshResolution-1), 0, 1);
+				float xRatio = x / (float) (simplifiedMeshResolution-1);
+				float yRatio = y / (float) (simplifiedMeshResolution-1);
+				
 				float topLeftCornerX = (fullMeshResolution) / -2f;
 				float topLeftCornerZ = (fullMeshResolution) / 2f;
 
@@ -90,7 +91,7 @@ namespace DudeiTerrain
 				float height = curvedHeightRatio * heightRange;
                 
 				vertices[index] = new float3(topLeftCornerX + xRatio * fullMeshResolution, height, topLeftCornerZ - yRatio * fullMeshResolution) + meshOffset;
-                
+
 				uvs[index] = new float2(xRatio, yRatio);
 				
 				triangles[index] = index;

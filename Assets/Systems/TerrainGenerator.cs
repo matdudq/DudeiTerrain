@@ -102,8 +102,19 @@ namespace DudeiTerrain
             NoiseSettings currentSettings = definition.NoiseSettings.Copy();
             
             currentSettings.positionOffset = noiseSpaceOffset;
-            
-            noiseTexture.GenerateNoiseForChanel(currentSettings, NoiseTextureChannel.RED, this, onCompleted);
+
+#if UNITY_EDITOR
+            if (Application.isPlaying)
+            {
+                noiseTexture.GenerateNoiseForChanel(currentSettings, NoiseTextureChannel.RED, this, onCompleted);
+            }
+            else
+            {
+                noiseTexture.GenerateNoiseForChanelInEditor(currentSettings, NoiseTextureChannel.RED, this, onCompleted);
+            }
+#else         
+             noiseTexture.GenerateNoiseForChanel(currentSettings, NoiseTextureChannel.RED, this, onCompleted);
+#endif
         }
 
         private int GetSimplifiedTerrainResolution(int fullMeshResolution, int lod)

@@ -5,7 +5,8 @@ namespace DudeiTerrain
 {
     public partial class TerrainGenerator
     {
-        [CustomEditor(typeof(TerrainGenerator))]
+#if UNITY_EDITOR
+         [CustomEditor(typeof(TerrainGenerator))]
         private class TerrainGeneratorEditor : Editor
         {
             #region Variables
@@ -83,5 +84,6 @@ namespace DudeiTerrain
 
             #endregion Unity Editor Methods
         }
+#endif
     }
 }

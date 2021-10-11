@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
+
+#if UNITY_EDITOR
+using Unity.EditorCoroutines.Editor;
+#endif
 
 namespace DudeiTerrain
 {
@@ -31,7 +34,7 @@ namespace DudeiTerrain
         {
             int textureResolution = settings.simplifiedTerrainResolution;
 
-            Texture2D meshTexture = new Texture2D(textureResolution, textureResolution, TextureFormat.RGBA32, false);
+            Texture2D meshTexture = new Texture2D(textureResolution, textureResolution, TextureFormat.RGBA32, true);
             meshTexture.filterMode = FilterMode.Point;
             meshTexture.wrapMode = TextureWrapMode.Clamp;
 
@@ -45,7 +48,7 @@ namespace DudeiTerrain
             
             NativeArray<Color32> textureArray = meshTexture.GetRawTextureData<Color32>();
             
-            int terrainResolution = textureArray.Length;
+            int terrainTextureResolution = textureResolution * textureResolution;
 
             TerrainTextureJob terrainTextureJob = new TerrainTextureJob()
             {
@@ -55,9 +58,22 @@ namespace DudeiTerrain
                 textureArray = textureArray
             };
             
-            JobHandle generateTextureJobHandle = terrainTextureJob.Schedule(terrainResolution, terrainResolution / 6, dependency);
+            JobHandle generateTextureJobHandle = terrainTextureJob.Schedule(terrainTextureResolution, terrainTextureResolution / 6, dependency);
 
+#if UNITY_EDITOR
+            if (Application.isPlaying)
+            {
+                jobContext.StartCoroutine(GenerateTextureJobProcess());
+
+            }
+            else
+            {
+                EditorCoroutineUtility.StartCoroutine(GenerateTextureJobProcess(), this);
+
+            }
+#else         
             jobContext.StartCoroutine(GenerateTextureJobProcess());
+#endif
             
             return generateTextureJobHandle;
             
@@ -67,7 +83,7 @@ namespace DudeiTerrain
 
                 generateTextureJobHandle.Complete();
                 
-                meshTexture.Apply();
+                meshTexture.Apply(true);
                 
                 onCompleted?.Invoke(meshTexture);
 
