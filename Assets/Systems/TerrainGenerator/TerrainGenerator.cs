@@ -15,7 +15,7 @@ namespace DudeiTerrain
 
         #if UNITY_EDITOR
         [SerializeField, Tooltip("Component which displays preview in edit mode.")]
-        private TerrainPreview terrainPreview = null;
+        private ChunkRenderer terrainPreview = null;
         #endif
 
         private TerrainMeshJobManager terrainMeshJobManager = null;
@@ -34,6 +34,11 @@ namespace DudeiTerrain
             {
                 GenerateTerrainData(lod, heightMap, onRequest);
             }
+        }
+
+        public void RequestTerrainByJob(int lod, NoiseTexture heightMap, Action<RequestedTerrainData> onRequest = null)
+        {
+            GenerateTerrainData(lod, heightMap, onRequest);
         }
 
         #endregion Public methods
@@ -153,7 +158,8 @@ namespace DudeiTerrain
             
             void OnTerrainGenerated(RequestedTerrainData terrainData)
             {
-                terrainPreview.DisplayMesh(terrainData.Mesh, terrainData.Texture);
+                terrainPreview.SetMesh(terrainData.Mesh);
+                terrainPreview.SetTexture(terrainData.Texture);
             }
         }
 

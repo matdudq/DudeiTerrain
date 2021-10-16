@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f673c7e9f4a4b8b85c7af1cf29769ae, type: 3}
-  m_Name: Art Referenced Terrain
+  m_Name: Endless Terrain Definition 1
   m_EditorClassIdentifier: 
   terrainLayers:
   - height: 0

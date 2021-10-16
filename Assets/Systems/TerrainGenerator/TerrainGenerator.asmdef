@@ -1,12 +1,13 @@
 {
-    "name": "Procedural",
+    "name": "TerrainGenerator",
     "rootNamespace": "",
     "references": [
         "GUID:61624ed80ba2d8843bee0ad08982ed8c",
         "GUID:d4ecd221b1802064e908c269a222f15d",
         "GUID:d8b63aba1907145bea998dd612889d6b",
         "GUID:2665a8d13d1b3f18800f46e256720795",
-        "GUID:478a2357cc57436488a56e564b08d223"
+        "GUID:478a2357cc57436488a56e564b08d223",
+        "GUID:8b0def62f0e8217478ad6de0164dfcae"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DudeiTerrain
+namespace DudeiTerrain.EndlessTerrain
 {
     public partial class EndlessTerrain : MonoBehaviour
     {
@@ -14,7 +14,7 @@ namespace DudeiTerrain
         private Transform observer = null;
         
         [SerializeField]
-        private TerrainChunkRenderer chunkRendererPrefab = null;
+        private EndlessTerrainChunkRenderer chunkRendererPrefab = null;
         
         [SerializeField] 
         private float observerMoveThresholdForLodUpdate = 25.0f;
@@ -109,10 +109,10 @@ namespace DudeiTerrain
                     }
                     else
                     {
-                        TerrainChunkRenderer terrainChunkRenderer = Instantiate(chunkRendererPrefab);
-                        terrainChunkRenderer.Initialize(viewedChunkCoord, ChunkSize, transform);
+                        EndlessTerrainChunkRenderer endlessTerrainChunkRenderer = Instantiate(chunkRendererPrefab);
+                        endlessTerrainChunkRenderer.Initialize(viewedChunkCoord, ChunkSize, transform);
                         
-                        TerrainChunk terrainChunk = new TerrainChunk(terrainChunkRenderer, this);
+                        TerrainChunk terrainChunk = new TerrainChunk(endlessTerrainChunkRenderer, this);
                         
                         chunkCoordToTerrain.Add(viewedChunkCoord, terrainChunk);
                     }

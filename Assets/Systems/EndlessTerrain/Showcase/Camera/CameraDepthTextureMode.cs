@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace DudeiTerrain.Showcase
+namespace DudeiTerrain.EndlessTerrain
 {
     public class CameraDepthTextureMode : MonoBehaviour 
     {

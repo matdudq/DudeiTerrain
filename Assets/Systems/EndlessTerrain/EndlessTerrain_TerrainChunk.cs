@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace DudeiTerrain
+namespace DudeiTerrain.EndlessTerrain
 {
 	public partial class EndlessTerrain
 	{
@@ -10,7 +10,7 @@ namespace DudeiTerrain
 
 			private EndlessTerrain chunkOwner = null;
 
-			private TerrainChunkRenderer chunkRenderer = null;
+			private EndlessTerrainChunkRenderer chunkRenderer = null;
 			
 			private LODTerrainData[] lodMeshes;
 
@@ -48,7 +48,7 @@ namespace DudeiTerrain
 
 			#region Constructor
 
-			public TerrainChunk(TerrainChunkRenderer chunkRenderer, EndlessTerrain chunkOwner)
+			public TerrainChunk(EndlessTerrainChunkRenderer chunkRenderer, EndlessTerrain chunkOwner)
 			{
 				this.chunkRenderer = chunkRenderer;
 
@@ -94,7 +94,7 @@ namespace DudeiTerrain
 						if (lodTerrainData.hasMesh)
 						{
 							chunkRenderer.SetMesh(lodTerrainData.mesh);
-							chunkRenderer.SetTexture(lodTerrainData.texture2D);
+							chunkRenderer.SetTextureAndCopyMaterial(lodTerrainData.texture2D);
 						}
 						else if (!lodTerrainData.hasRequestedMesh)
 						{

@@ -2,15 +2,9 @@
 
 namespace DudeiTerrain
 {
-	public class TerrainChunkRenderer : MonoBehaviour
+	public class EndlessTerrainChunkRenderer : ChunkRenderer
 	{
 		#region Variables
-
-		[SerializeField]
-		private MeshRenderer meshRenderer = null;
-
-		[SerializeField]
-		private MeshFilter meshFilter = null;
 		
 		private Bounds bounds = new Bounds();
 		
@@ -31,12 +25,7 @@ namespace DudeiTerrain
 		#endregion Properties
 
 		#region Public methods
-
-		public void SetVisible(bool visible)
-		{
-			gameObject.SetActive(visible);
-		}
-
+		
 		public void Initialize(Vector2 coord, int size, Transform parent)
 		{
 			this.coords = coord;
@@ -49,15 +38,10 @@ namespace DudeiTerrain
 			SetVisible(false);
 		}
 
-		public void SetTexture(Texture2D newTexture)
+		public void SetTextureAndCopyMaterial(Texture2D newTexture)
 		{
 			meshRenderer.sharedMaterial = meshRenderer.material;
-			meshRenderer.sharedMaterial.mainTexture = newTexture;
-		}
-
-		public void SetMesh(Mesh mesh)
-		{
-			meshFilter.mesh = mesh;
+			SetTexture(newTexture);
 		}
 		
 		public float BoundsToPositionDistance(Vector3 position)

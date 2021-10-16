@@ -1,0 +1,18 @@
+{
+    "name": "EndlessTerrain",
+    "rootNamespace": "",
+    "references": [
+        "GUID:889899c2c6d74584fb1f857c56ade9a2",
+        "GUID:d4ecd221b1802064e908c269a222f15d",
+        "GUID:61624ed80ba2d8843bee0ad08982ed8c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
