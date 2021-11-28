@@ -22,7 +22,7 @@ namespace DudeiTerrain
 
 		private void Awake()
 		{
-			SetVisible(disableOnAwake);
+			SetVisible(!disableOnAwake);
 		}
 
 		#endregion Unity Methods
